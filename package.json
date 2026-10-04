@@ -1,0 +1,7 @@
+{
+  "name": "nexora",
+  "private": true,
+  "version": "1.0.0",
+  "engines": { "node": ">=20" },
+  "scripts": { "test": "node --check api/contact.js && node --check script.js" }
+}
