@@ -1,4 +1,3 @@
 const menu=document.querySelector('.menu'), nav=document.querySelector('.nav nav');
 menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open);menu.textContent=open?'Close':'Menu'});
 document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.textContent='Menu'}));
-document.getElementById('project-form').addEventListener('submit',e=>{e.preventDefault();const d=new FormData(e.currentTarget);const subject=encodeURIComponent(`NEXORA project enquiry — ${d.get('name')}`);const body=encodeURIComponent(`Name: ${d.get('name')}\nBusiness: ${d.get('business')}\nEmail: ${d.get('email')}\nWhatsApp: ${d.get('whatsapp')}\nProject type: ${d.get('type')}\nBudget: ${d.get('budget')}\n\nProject details:\n${d.get('message')}`);location.href=`mailto:nexorabuisnessdigital@gmail.com?subject=${subject}&body=${body}`});
