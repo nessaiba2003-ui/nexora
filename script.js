@@ -16,4 +16,5 @@ const showcase=document.createElement('section');showcase.className='proof-galle
 showcase.querySelectorAll('.proof-card').forEach((card,index)=>card.id=`project-shot-${projectCards[index][0].replace('.png','')}`);
 document.querySelector('.projects').insertAdjacentElement('afterend',showcase);
 const previewMap={travel:'travel',gym:'gym',portfolio:'portfolio',event:'dropstudio'};
+const experienceScript=document.createElement('script');experienceScript.src='experience.js';document.body.append(experienceScript);
 document.querySelectorAll('.project').forEach(project=>{const key=Object.keys(previewMap).find(name=>project.classList.contains(name));const link=project.querySelector('.project-info a');if(!key||!link)return;const button=document.createElement('button');button.type='button';button.className='preview-button';button.innerHTML='View screenshots <b>↓</b>';button.setAttribute('aria-label',`View screenshots for ${project.querySelector('h3').textContent}`);button.addEventListener('click',()=>document.getElementById(`project-shot-${previewMap[key]}`)?.scrollIntoView({behavior:'smooth',block:'center'}));link.replaceWith(button)});
